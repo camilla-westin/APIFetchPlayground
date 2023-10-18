@@ -3,5 +3,7 @@ export type NewsTypes = {
     Identifier: number,
     Headline: string,
     PushMessage: string,
-    Updated: Date
+    Updated: string,
+    BodyText: string,
+    slug: string
 }
