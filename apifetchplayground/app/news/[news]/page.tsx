@@ -29,8 +29,8 @@ function NewsItemPage() {
 
   return (
     <div>
-      <h1>{data.Headline}</h1>
-      <p>{data.BodyText}</p>
+      <h1 className="text-3xl mb-4">{data.Headline}</h1>
+      <div dangerouslySetInnerHTML={{ __html: data.BodyText }}></div>
     </div>
   );
 }
