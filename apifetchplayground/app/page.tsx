@@ -1,9 +1,11 @@
 import NewsList from '@/components/krisinformation/news/NewsList'
+import WarningList from '@/components/vadervarning/WarningList'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="p-24">
       <NewsList />
+      <WarningList />
     </main>
   )
 }
