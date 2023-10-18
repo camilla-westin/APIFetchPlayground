@@ -20,7 +20,7 @@ function NewsList() {
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://api.krisinformation.se/v3/news')
+    fetch('https://api.krisinformation.se/v3/news/?days=90')
       .then((res) => res.json())
       .then((data) => {
         // Generate slugs for news items

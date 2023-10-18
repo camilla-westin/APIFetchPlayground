@@ -7,7 +7,7 @@ export const NewsCard = ({ newsitem }: { newsitem: NewsTypes}) => {
         <div className="bg-white p-6">
           <h2 className="text-2xl pb-2"><Link 
               href={{
-                  pathname: `/news/${newsitem.slug}`,
+                  pathname: `/krisinformation/${newsitem.slug}`,
                   query: { _id: newsitem.Identifier }
               }}>
               {newsitem.Headline}
