@@ -1,4 +1,4 @@
-export default function NewsLayout({
+export default function WarningsLayout({
   children,
 }: {
   children: React.ReactNode

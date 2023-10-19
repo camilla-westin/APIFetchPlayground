@@ -1,4 +1,4 @@
-export type WarningTypes = {
+export type WeatherWarningTypes = {
     item: string,
     id: number,
     event:{sv: string},

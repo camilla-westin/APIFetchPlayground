@@ -1,10 +1,10 @@
 'use client'
 import { useState, useEffect } from 'react';
-import { WarningTypes } from '@/types/WarningTypes';
-import { WarningCard } from './WarningCard';
+import { WeatherWarningTypes } from '@/types/WeatherWarningTypes';
+import { WeatherWarningCard } from './WeatherWarningCard';
 
-function WarningList() {
-  const [data, setData] = useState<WarningTypes[]>([]);
+function WeatherWarningList() {
+  const [data, setData] = useState<WeatherWarningTypes[]>([]);
   const [isLoading, setLoading] = useState(true);
 
  useEffect(() => {
@@ -20,11 +20,11 @@ function WarningList() {
   if (!data) return <p>No weather data</p>;
 
   return (
-    <div>
+    <div className="w-full">
       <ul>
         {data.map((item) => (
           <li key={item.id}>
-            <WarningCard warning={item}></WarningCard>
+            <WeatherWarningCard warning={item}></WeatherWarningCard>
           </li>
         ))}
       </ul>
@@ -32,4 +32,4 @@ function WarningList() {
   );
 }
 
-export default WarningList;
+export default WeatherWarningList;
