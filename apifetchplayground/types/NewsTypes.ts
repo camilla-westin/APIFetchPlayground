@@ -1,4 +1,5 @@
 export type NewsTypes = {
+    numofitems: number,
     item: string,
     Identifier: number,
     Headline: string,

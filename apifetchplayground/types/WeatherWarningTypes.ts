@@ -1,4 +1,5 @@
 export type WeatherWarningTypes = {
+    numofitems: number,
     item: string,
     id: number,
     event:{sv: string},

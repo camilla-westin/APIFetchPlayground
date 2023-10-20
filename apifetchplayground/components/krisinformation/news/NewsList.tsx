@@ -15,9 +15,10 @@ function generateSlug(text: string) {
     .replace(/-+$/, ''); // Trim trailing hyphens
 }
 
-function NewsList() {
+function NewsList(props: NewsTypes) {
   const [data, setData] = useState<NewsTypes[]>([]);
   const [isLoading, setLoading] = useState(true);
+  const shownItems = props.numofitems;
 
   useEffect(() => {
     fetch('https://api.krisinformation.se/v3/news/?days=90')
@@ -29,7 +30,7 @@ function NewsList() {
           slug: generateSlug(item.Headline), // Use the Headline property for the slug
         }));
 
-        const limitedData = newsDataWithSlugs.slice(0, 3);
+        const limitedData = newsDataWithSlugs.slice(0, shownItems);
 
         setData(limitedData);
         setLoading(false);
