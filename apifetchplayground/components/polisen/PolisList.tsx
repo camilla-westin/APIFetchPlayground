@@ -1,14 +1,14 @@
 'use client'
 import { useState, useEffect } from 'react';
-import { WeatherWarningTypes } from '@/types/WeatherWarningTypes';
-import { WeatherWarningCard } from './WeatherWarningCard';
+import { PolisTypes } from '@/types/PolisTypes';
+import { PolisCard } from './PolisCard';
 
-function WeatherWarningList() {
-  const [data, setData] = useState<WeatherWarningTypes[]>([]);
+function PolisList() {
+  const [data, setData] = useState<PolisTypes[]>([]);
   const [isLoading, setLoading] = useState(true);
 
  useEffect(() => {
-    fetch('https://opendata-download-warnings.smhi.se/ibww/api/version/1/warning.json')
+    fetch('https://polisen.se/api/events')
       .then((res) => res.json())
       .then((data) => {
         const limitedData = data.slice(0, 3);
@@ -25,7 +25,7 @@ function WeatherWarningList() {
       <ul>
         {data.map((item) => (
           <li key={item.id}>
-            <WeatherWarningCard warning={item}></WeatherWarningCard>
+            <PolisCard polisevent={item}></PolisCard>
           </li>
         ))}
       </ul>
@@ -33,4 +33,4 @@ function WeatherWarningList() {
   );
 }
 
-export default WeatherWarningList;
+export default PolisList

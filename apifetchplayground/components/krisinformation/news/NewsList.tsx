@@ -29,7 +29,9 @@ function NewsList() {
           slug: generateSlug(item.Headline), // Use the Headline property for the slug
         }));
 
-        setData(newsDataWithSlugs);
+        const limitedData = newsDataWithSlugs.slice(0, 3);
+
+        setData(limitedData);
         setLoading(false);
       });
   }, []);

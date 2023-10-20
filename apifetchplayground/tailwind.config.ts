@@ -10,8 +10,12 @@ const config: Config = {
     extend: {
       borderColor: {
         'krisblue': '#58728d',
-        'vaderyellow': '#FBB060'
-      },      
+        'vaderyellow': '#FBB060',
+        'polisred': '#FB0E0C',     
+      },  
+      backgroundColor: {
+         'polisblue': '#1862A8'
+      }    
     },
   },
   plugins: [],
